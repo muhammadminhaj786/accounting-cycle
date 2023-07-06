@@ -1,0 +1,15 @@
+.nav-item{
+    margin-left: 3% !important;
+    font-size: 2.3vw !important;
+}
+.main-container{
+    height:  400px;
+    border: 1px solid black;
+    margin: 5% auto;
+}
+p{
+    text-align: center !important;
+}
+button{
+    margin-left: 10% !important;
+}
