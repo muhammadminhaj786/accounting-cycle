@@ -34,15 +34,31 @@
             </p>
             <div class="fields">
                 <div class="debit-fields mx-auto w-75 mt-3">
-                    <input type="text" placeholder="Info of Debit account">
-                    <input type="text" placeholder="Amount of Debit account">
-                    <input type="text" placeholder="Type of Debit account">
+                    <input type="text" id="debit-info" placeholder="Info of Debit account">
+                    <input type="text" id="debit-amount" placeholder="Amount of Debit account">
+                    <label for="type">Choose a Type:</label>
+                    <select name="type" id="typeA">
+                        <option value="Assets">Assets</option>
+                        <option value="Liability">Liability</option>
+                        <option value="Owner Equity">Owner Equity</option>
+                        <option value="Revenue">Revenue</option>
+                        <option value="Expense">Expense</option>
+                        <option value="Widtdraw">Widtdraw</option>                    
+                    </select>
         
                 </div>
                 <div class="credit-fields mx-auto w-75 mt-3">
-                    <input type="text" placeholder="Info of Credit account">
-                    <input type="text" placeholder="Amount of Credit account">
-                    <input type="text" placeholder="Type of Credit account">
+                    <input type="text" id="credit-info" placeholder="Info of Credit account">
+                    <input type="text" id="credit-amount" placeholder="Amount of Credit account">
+                    <label for="type">Choose a Type:</label>
+                    <select name="type" id="typeB">
+                        <option value="volvo">Assets</option>
+                        <option value="Liability">Liability</option>
+                        <option value="Owner Equity">Owner Equity</option>
+                        <option value="Revenue">Revenue</option>
+                        <option value="Expense">Expense</option>
+                        <option value="Widtdraw">Widtdraw</option>                    
+                    </select>
         
                 </div>
             </div>
@@ -51,7 +67,9 @@
     </section>
     <section class="footer w-50 mx-auto">
         <div class="btns ">
-            <button class="btn btn-info" onclick="addDebitEntry()">Add Debit Entry</button><button class="btn btn-info" onclick="addCreditEntry()">Add Credit Entry</button><button class="btn btn-success">Submit</button>
+            <button class="btn btn-info" onclick="addDebitEntry()">Add Debit Entry</button>
+            <button class="btn btn-info" onclick="addCreditEntry()">Add Credit Entry</button>
+            <button class="btn btn-success " onclick="record()">Submit</button>
         </div>
     </section>
 </body>
