@@ -139,9 +139,18 @@ window.addEventListener('load',function(){
         var trailDiv = `
         <tr>
         <td>${i.Dinfo}</td>
+        <td>${""}</td>
         <td>${i.Damount}</td>
+
+        </tr>
+        <tr>
+        <td>${i.Cinfo}</td>
         <td>${i.Camount}</td>
-        </tr>`
+        <td>${""}</td>
+
+        </tr>
+        `
         trailbody.innerHTML += trailDiv
     }
 })
+
