@@ -80,7 +80,7 @@ function record(){
 //         localStorage.setItem('credit',JSON.stringify(getCObj))
 //     }
 
-    var Obj = {
+var Obj = {
         Dinfo,
         Damount,
         Dtype,
@@ -107,7 +107,7 @@ var tbody = document.querySelector('.tbody');
 
 //create event listner
 window.addEventListener('load',function(){
-    var getObj = JSON.parse(this.localStorage.getItem('accounts'))
+    var getObj = JSON.parse(this.localStorage.getItem('accounts')) || []
     for (const i of getObj) {
         var id = 1;
         var tableBody = `             <tr>
@@ -123,7 +123,13 @@ window.addEventListener('load',function(){
           <td>${i.Camount}</td>
         </tr>
         `
-        tbody.innerHTML += tableBody
+        //error handling
+        if(tbody===null){
+            return
+        }else{
+            tbody.innerHTML += tableBody
+
+        }
     
     }
 
@@ -132,10 +138,13 @@ window.addEventListener('load',function(){
 //working on trail balance page
 window.addEventListener('load',function(){
     var trailbody = document.querySelector('.trialbody');
-    var getObj = JSON.parse(this.localStorage.getItem('accounts'));
+    var getObj = JSON.parse(this.localStorage.getItem('accounts')) || []
     var id = 1;
+    var debitTotal = ""
+
     for (const i of getObj) {
-        console.log(i.Camount)
+        debitTotal = debitTotal + i.Damount 
+
         var trailDiv = `
         <tr>
         <td>${i.Dinfo}</td>
@@ -150,7 +159,19 @@ window.addEventListener('load',function(){
 
         </tr>
         `
-        trailbody.innerHTML += trailDiv
+        console.log(debitTotal)
+        //error handling
+        if(trailbody===null){
+            return
+        }else{
+            trailbody.innerHTML += trailDiv
+        }
     }
+
+    // create debit accounts and credit accounts object
+    
+    // let debitObj = {
+
+    // }
 })
 
