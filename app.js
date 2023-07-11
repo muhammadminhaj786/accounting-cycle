@@ -135,15 +135,20 @@ window.addEventListener('load',function(){
 
 })
 
+
 //working on trail balance page
+var debitTrail = document.querySelector('.debittotal')
+var creditTrail = document.querySelector('.credittotal')
 window.addEventListener('load',function(){
     var trailbody = document.querySelector('.trialbody');
     var getObj = JSON.parse(this.localStorage.getItem('accounts')) || []
     var id = 1;
-    var debitTotal = ""
+    var debitTotal = 0;
+    var creditTotal = 0;
 
     for (const i of getObj) {
-        debitTotal = debitTotal + i.Damount 
+        debitTotal = +i.Damount + debitTotal
+        creditTotal = +i.Damount + creditTotal 
 
         var trailDiv = `
         <tr>
@@ -159,7 +164,6 @@ window.addEventListener('load',function(){
 
         </tr>
         `
-        console.log(debitTotal)
         //error handling
         if(trailbody===null){
             return
@@ -167,8 +171,9 @@ window.addEventListener('load',function(){
             trailbody.innerHTML += trailDiv
         }
     }
-
-    // create debit accounts and credit accounts object
+    debitTrail.innerHTML = debitTotal
+    creditTrail.innerHTML = creditTotal
+      // create debit accounts and credit accounts object
     
     // let debitObj = {
 
