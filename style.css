@@ -1,6 +1,6 @@
 .nav-item{
-    margin-left: 3% !important;
-    font-size: 2.3vw !important;
+    margin-left: 2.7% !important;
+    font-size: 1.7vw !important;
 }
 .main-container{
     height:  400px;
@@ -12,4 +12,8 @@ p{
 }
 button{
     margin-left: 10% !important;
+}
+thead{
+    color: blue;
+    border: 1px solid black;
 }
