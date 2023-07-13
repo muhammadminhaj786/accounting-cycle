@@ -8,27 +8,57 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="nav-bar">
-        <ul class="nav bg-dark ">
-            <li class="nav-item ">
-              <a class="nav-link active text-light" aria-current="page" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./generalEntries.html">General Entries</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./trialBalance.html">Trail balance</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./IncomeStatement.html">Income Statement</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./balanceSheet.html">Balance Sheet</a>
-            </li>
-          </ul>
-    </section>
+  <section class="nav-bar">
+    <ul class="nav bg-dark ">
+        <li class="nav-item ">
+          <a class="nav-link active text-light" aria-current="page" href="./index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./generalEntries.html">General Entries</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./trialBalance.html">Trail balance</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./IncomeStatement.html">Income Statement</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./balanceSheet.html">Balance Sheet</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./ownerEquity.html">Owner's Equity</a>
+        </li>
+      </ul>
+</section>
     <section>
-        Income Statement
+        <p class="fs-2 fw-bold">Income Statment</p>
+        <div class="income-div">
+          <table class="table w-75 mx-auto">
+            <thead >
+              <tr class="">
+                <th scope="col">Revenue</th>
+                <th scope="col">Debit</th>
+                <th scope="col">Credit</th>
+              </tr>
+            </thead>
+            <tbody class="income-body-rev">
+              
+            </tbody>
+            <thead >
+              <tr class="">
+                <th scope="col">Expense</th>
+                <th scope="col">Debit</th>
+                <th scope="col">Credit</th>
+              </tr>
+            </thead>
+            <tbody class="income-body-exp">
+              
+            </tbody>
+          </table>
+          <div class="footer border w-75 mx-auto">
+            <h3 class="foot-p">Net loss <span class="span"></span></h3>
+          </div>
+        </div>
     </section>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
