@@ -38,13 +38,45 @@ function addCreditEntry(){
 fields.innerHTML += creditdiv
 }
 
+
 function record(){
-    var Dinfo = document.getElementById('debit-info').value;
-    var Cinfo = document.getElementById('credit-info').value;
-    var Damount = document.getElementById('debit-amount').value;
-    var Camount = document.getElementById('credit-amount').value;
-    var Dtype = document.getElementById('typeA').value
-    var Ctype = document.getElementById('typeB').value
+    var Dinfo = document.getElementById('debit-info');
+    var Cinfo = document.getElementById('credit-info');
+    var Damount = document.getElementById('debit-amount');
+    var Camount = document.getElementById('credit-amount');
+    var Dtype = document.getElementById('typeA')
+    var Ctype = document.getElementById('typeB')
+
+    //apply condition do not fill null entry
+    if((!Dinfo) || (!Damount) || (!Dtype) || (Cinfo) || (Camount) || (Ctype)){
+        var Obj = {
+            Dinfo : Dinfo.value,
+            Damount: Damount.value,
+            Dtype: Dtype.value,
+            Cinfo:Cinfo.value,
+            Camount:Camount.value,
+            Ctype:Ctype.value
+        }
+        var getObj = JSON.parse(localStorage.getItem('accounts'))
+        if (getObj === null){
+            var arr = []
+            arr.push(Obj)
+            localStorage.setItem('accounts',JSON.stringify(arr))
+            // console.log(arr)
+        }else{
+            getObj.push(Obj)
+            localStorage.setItem('accounts',JSON.stringify(getObj))
+        }
+        Dinfo.value=""  
+        Damount.value=""
+        Dtype.value=""
+        Cinfo.value=""
+        Camount.value=""
+        Ctype.value=""
+    }else{
+        console.log('please enter filelds')
+
+    }
 
 //     //creating a debit object
 //     var dObj = {
@@ -80,28 +112,7 @@ function record(){
 //         localStorage.setItem('credit',JSON.stringify(getCObj))
 //     }
 
-var Obj = {
-        Dinfo,
-        Damount,
-        Dtype,
-        Cinfo,
-        Camount,
-        Ctype
-    }
-    var getObj = JSON.parse(localStorage.getItem('accounts'))
-    if (getObj === null){
-        var arr = []
-        arr.push(Obj)
-        localStorage.setItem('accounts',JSON.stringify(arr))
-        // console.log(arr)
-    }else{
-        getObj.push(Obj)
-        localStorage.setItem('accounts',JSON.stringify(getObj))
-    }
-
-
 }
-
 //working on generalEntries page
 var tbody = document.querySelector('.tbody');
 
